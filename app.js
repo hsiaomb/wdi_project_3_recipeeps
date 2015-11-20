@@ -7,7 +7,7 @@ var ejs = require('ejs');
 var ejsLayouts = require('express-ejs-layouts');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parsers');
+var bodyParser = require('body-parser');
 var session = require('express-session');
 var methodOverride = require('method-override');
 
@@ -18,6 +18,15 @@ mongoose.connect('mongodb://localhost/recipeeps');
 app.use(morgan('dev')); 
 app.use(cookieParser());
 app.use(bodyParser()); 
+
+//Set up method-override
+app.use(methodOverride(function(req, res){
+	if(req.body && typeof req.body === 'object' && '_method' in req.body){
+		var _method = req.body._method;
+		delete req.body._method;
+		return _method;
+	}
+}))
 
 //Setting up the views
 app.set('view engine', 'ejs');
@@ -32,7 +41,7 @@ var router = require(__dirname + '/config/routes');
 app.use(router);
 
 app.get("/", function (req, res){
-	res.redirect("/sports");
+	res.render("partials/homepage");
 });
 
 app.listen(3000);
