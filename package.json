@@ -1,0 +1,19 @@
+{
+  "name": "wdi_project_3_recipeeps",
+  "version": "1.0.0",
+  "description": "WDI Project 3 - Recipeeps",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsiaomb/wdi_project_3_recipeeps.git"
+  },
+  "author": "Michael Hsiao, Rhys Morgan, Richard Silk, Ali Andrews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hsiaomb/wdi_project_3_recipeeps/issues"
+  },
+  "homepage": "https://github.com/hsiaomb/wdi_project_3_recipeeps#readme"
+}
